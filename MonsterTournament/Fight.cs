@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonsterTaurment2
+namespace MonsterTournament
 {
     public class Fight
     {
-        public List<Monsters> Monsters;
+        public List<Monster> Monsters;
         private int TourCount;
 
-        public Fight(List<Monsters> monsters, int tourCount)
+        public Fight(List<Monster> monsters, int tourCount)
         {
             TourCount = tourCount;
             Monsters = monsters;
@@ -24,14 +24,14 @@ namespace MonsterTaurment2
         {
             for (int i = 0; i < TourCount; i++)
             {
-                (List<Monsters> firsthalf, List<Monsters> secondhalf) twoLists = Pair.Selection(Monsters);
+                (List<Monster> firsthalf, List<Monster> secondhalf) twoLists = Pair.Selection(Monsters);
                 Battle(twoLists.firsthalf, twoLists.secondhalf);
             }
 
         }
-        public void Battle(List<Monsters> firsthalf, List<Monsters> secondhalf)
+        private void Battle(List<Monster> firsthalf, List<Monster> secondhalf)
         {
-            List<Monsters> winner = new List<Monsters>();
+            List<Monster> winners = new List<Monster>();
             for (int i = 0; i < firsthalf.Count; i++)
             {
                 while (firsthalf[i].IsAlive&& secondhalf[i].IsAlive)
@@ -57,23 +57,22 @@ namespace MonsterTaurment2
             {
                 if (firsthalf[i].IsAlive)
                 {
-                    winner.Add(firsthalf[i]);
+                    winners.Add(firsthalf[i]);
                 }
 
                 if (secondhalf[i].IsAlive)
                 {
-                    winner.Add(secondhalf[i]);
+                    winners.Add(secondhalf[i]);
                 }
             }
-
             Console.WriteLine("");
             Console.WriteLine("\t Победители этого тура");
-            foreach (var i in winner)
+            foreach (var i in winners)
             {
                 Console.WriteLine(i);
             }
             Console.WriteLine("");
-            Monsters = winner;
+            Monsters = winners;
         }
     }
 }

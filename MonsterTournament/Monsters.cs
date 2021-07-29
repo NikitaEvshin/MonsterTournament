@@ -4,21 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonsterTaurment2
+namespace MonsterTournament
 {
-    public class Monsters
+    public class Monster
     {
         public string Name;
         public int Hp;
         public int Dmg;
         public bool IsAlive;
 
-        public Monsters(string name, int hp, int dmg, bool isAlive)
+        public Monster(string name, int hp, int dmg)
         {
             Name = name;
             Hp = hp;
             Dmg = dmg;
-            IsAlive = isAlive;
+            IsAlive = true;
         }
 
         public void GetDamage(int Dmg)

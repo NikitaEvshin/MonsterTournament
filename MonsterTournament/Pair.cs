@@ -4,21 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonsterTaurment2
+namespace MonsterTournament
 {
     public class Pair
     {
-        public List<Monsters> FirstSelection;
+        public List<Monster> FirstSelection;
 
-        public Pair(List<Monsters> firstSelection)
+        public Pair(List<Monster> firstSelection)
         {
             FirstSelection = firstSelection;
         }
 
-        public static (List<Monsters> firsthalf, List<Monsters> secondhalf) Selection(List<Monsters> monster)
+        public static (List<Monster> firsthalf, List<Monster> secondhalf) Selection(List<Monster> monster)
         {
-            List<Monsters> firsthalf = new List<Monsters>();
-            List<Monsters> secondhalf = new List<Monsters>();
+            List<Monster> firsthalf = new List<Monster>();
+            List<Monster> secondhalf = new List<Monster>();
 
             for (int i = 0; i < monster.Count; i++)
             {
